@@ -1,0 +1,11 @@
+<h2>{{CategoryName|titlecase}} Product List</h2>
+<ol>
+    <li *ngFor="let item of Products">
+        <a routerLink="details/{{item.id}}">{{item.title | titlecase}}</a>
+    </li>
+</ol>
+<div>
+    <router-outlet></router-outlet>
+</div>
+<br>
+<a routerLink="/categories">Back to Categories</a>

@@ -1,0 +1,16 @@
+<form #frmRegister="ngForm" (submit)="SubmitForm(frmRegister.value)">
+    <h2>Register User</h2>
+    <dl>
+        <dt>User Id</dt>
+        <dd><input type="text" name="UserId" ngModel #UserId="ngModel"></dd>
+        <dt>User Name</dt>
+        <dd><input type="text" name="UserName" ngModel #UserName="ngModel"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" name="Password" ngModel #Password="ngModel"></dd>
+        <dt>Email</dt>
+        <dd><input type="text" name="Email" ngModel #Email="ngModel"></dd>
+        <dt>Mobile</dt>
+        <dd><input type="text" name="Mobile" ngModel #Mobile="ngModel"></dd>
+    </dl>
+    <button class="btn btn-primary">Register</button>
+</form>

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+   <nav class="btn-toolbar bg-danger">
+      <div class="btn-group">
+        <button (click)="OnButtonClick($event)" name="basic" class="btn btn-danger">Basic Details</button>
+        <button (click)="OnButtonClick($event)" name="preview" class="btn btn-danger">Preview</button>
+        <button (click)="OnButtonClick($event)" name="description" class="btn btn-danger">Description</button>
+        <button (click)="OnButtonClick($event)" name="rating" class="btn btn-danger">Rating</button>
+      </div>
+   </nav>
+   <section class="mt-3">
+       <div [ngSwitch]="templateToDisplay">
+           <div *ngSwitchCase="'basic'">
+               <h3>Basic Details</h3>
+               <dl>
+                   <dt>Title</dt>
+                   <dd>{{product.title}}</dd>
+                   <dt>Price</dt>
+                   <dd>{{product.price}}</dd>
+               </dl>
+           </div>
+           <div *ngSwitchCase="'preview'">
+               <h3>Preview</h3>
+               <img [src]="product.image" width="200" height="200">
+           </div>
+           <div *ngSwitchCase="'description'">
+               <h3>Description</h3>
+               <p>{{product.description}}</p>
+           </div>
+           <div *ngSwitchCase="'rating'">
+               <h3>Rating</h3>
+               <p>
+                   <span class="bi bi-star-fill text-success"></span> {{product.rating.rate}} [{{product.rating.count}}]
+               </p>
+           </div>
+       </div>
+   </section>
+</div>

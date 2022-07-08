@@ -1,0 +1,61 @@
+<div class="container-fluid">
+   
+    <div class="row">
+        <div class="col-4">
+            <h2>Register User</h2>
+            <form class="p-2" novalidate #frmRegister="ngForm">
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input type="text" required minlength="4" name="UserName" ngModel  #UserName="ngModel" ></dd>
+                    <dd class="text-danger" *ngIf="(frmRegister.submitted && UserName.invalid) || (UserName.touched && UserName.invalid)">
+                         <span *ngIf="UserName.errors?.['required']">User Name Required</span>
+                         <span *ngIf="UserName.errors?.['minlength']">Name too short min 4 chars</span>
+                    </dd>
+                    <dt>Password</dt>
+                    <dd>
+                        <input type="password" (keypress)="VerifyCaps($event)" required name="Password" ngModel #Password="ngModel" pattern="(?=.*[A-Z])\w{4,15}">
+                        <span *ngIf="isCaps" class="text-warning"><span class="bi bi-exclamation-triangle"></span> Caps ON</span>
+                    </dd>
+                    <dd class="text-danger" *ngIf="(frmRegister.submitted && Password.invalid) || (Password.touched && Password.invalid)">
+                        <span *ngIf="Password.errors?.['required']">Password Required</span>
+                        <span *ngIf="Password.errors?.['pattern']">Password must have atleast 1 uppercase letter</span>
+                    </dd>
+                    <dt>Mobile</dt>
+                    <dd><input type="text" required pattern="\+91\d{10}" name="Mobile" ngModel #Mobile="ngModel"></dd>
+                    <dd class="text-danger" *ngIf="(frmRegister.submitted && Mobile.invalid) || (Mobile.touched && Mobile.invalid)">
+                        <span *ngIf="Mobile.errors?.['required']">Mobile Required</span>
+                        <span *ngIf="Mobile.errors?.['pattern']">Invalid Mobile</span>
+                    </dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select (change)="VerifyCity($event)" name="City" ngModel #City="ngModel">
+                            <option value="-1">Select Your City</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Hyd">Hyd</option>
+                        </select>
+                    </dd>
+                    <dd class="text-danger" *ngIf="isCityInValid">
+                        <span>Please Select Your City</span>
+                    </dd>
+                    <dt>Verify Challenge</dt>
+                    <dd>Enter Even Number</dd>
+                    <dd>
+                        <input type="text" (blur)="VerifyEven($event)" name="Even" ngModel #Even="ngModel">
+                    </dd>
+                    <dd class="text-danger" *ngIf="isEvenInvalid">
+                        <span>Not an Even Number</span>
+                    </dd>
+                    <dt>Want Subscription?</dt>
+                    <dd class="form-switch">
+                        <input name="Subscribe"  ngModel #Subscribe="ngModel" class="form-check-input"  type="checkbox"> Yes
+                    </dd>
+                </dl>
+                <button class="btn btn-primary">Register</button>
+                
+            </form>
+        </div>
+        <div class="col-8">
+         
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,25 @@
+<div class="mt-2">
+  <ul class="list-unstyled">
+      <li><button (click)="onButtonClick($event)" name="all" class="btn btn-link">All [<span>{{AllCount}}</span>]</button></li>
+      <li><button (click)="onButtonClick($event)" name="electronics" class="btn btn-link">Electronics [<span>{{ElectronicsCount}}</span>]</button></li>
+      <li><button (click)="onButtonClick($event)" name="jewelery" class="btn btn-link">Jewelery [<span>{{JeweleryCount}}</span>]</button></li>
+      <li><button (click)="onButtonClick($event)" name="men's clothing" class="btn btn-link">Men's Clothing [<span>{{MensCount}}</span>]</button></li>
+      <li><button (click)="onButtonClick($event)" name="women's clothing" class="btn btn-link">Women's Clothing [<span>{{WomensCount}}</span>]</button></li>
+  </ul>
+  <h2>Select Category</h2>
+  <select class="form-select">
+      <option>All</option>
+  </select>
+  <h2>Search Category</h2>
+  <div class="input-group">
+    <input type="text" class="form-control">
+    <button class="btn btn-warning"><span class="bi bi-search"></span></button>
+  </div>
+  <h2>Select Categories</h2>
+  <ul>
+      <li><input type="checkbox">All</li>
+      <li><input type="checkbox">Electronics</li>
+      <li><input type="checkbox">Jewelery</li>
+      <li><input type="checkbox">Mens Clothing</li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <header class="bg-danger text-white text-center mb-2 p-2">
+     <h1> <span class="bi bi-cart4"></span> Angular Shopping Site</h1>
+  </header>
+  <section class="mt-2 row">
+    <nav class="col-3">
+       <ul class="list-unstyled">
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="home">Home</a></li>
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="electronics">Electronics</a></li>
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="footwear">Footwear</a></li>
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="fashion">Fashion</a></li>
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="categories">Categories</a></li>
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="login">Login</a></li>
+         <li><a class="btn btn-danger w-100 mb-2" routerLink="register">Register</a></li>
+       </ul>
+    </nav> 
+    <main class="col-9">
+        <router-outlet></router-outlet>
+    </main>
+  </section>
+</div>

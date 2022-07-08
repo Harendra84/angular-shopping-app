@@ -1,0 +1,7 @@
+
+<h2>Categories - {{UserId}} <button (click)="Signout()" class="btn btn-link">Signout</button></h2>
+<ol>
+  <li *ngFor="let item of Categories">
+        <a routerLink="/products/{{item}}">{{item | titlecase}}</a>
+  </li>
+</ol>

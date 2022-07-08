@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <header class="bg-danger text-white text-center">
+      <h2> <span class="bi bi-cart"></span> Fakestore</h2>
+  </header>
+  <section class="row mt-2">
+      <nav class="col-3">
+        <h2>Browse Products</h2>
+        <app-filter (FilterClicked)="FilterChanged($event)" [AllCount]="AllCount" [ElectronicsCount]="ElectronicsCount" [JeweleryCount]="JeweleryCount" [MensCount]="MensCount" [WomensCount]="WomensCount"></app-filter>
+      </nav>
+      <main class="col-9">
+        <h2 class="text-center">Products Catalog</h2>
+        <div class="d-flex flex-wrap overflow-auto" style="height: 500px;">
+            <div *ngFor="let item of Products" class="card m-2 p-2" style="width: 200px;">
+                 <img [src]="item.image" class="card-img-top" height="150">
+                 <div class="card-header" style="height: 180px;">
+                    <p>{{item.title}}</p>
+                 </div>
+                 <div class="card-footer">
+                     {{item.category}}
+                 </div>
+            </div>
+        </div>
+      </main>
+  </section>
+</div>

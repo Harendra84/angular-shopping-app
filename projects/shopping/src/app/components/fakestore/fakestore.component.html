@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <div class="card w-50 p-2">
+        <img [src]="product.image" class="card-img-top" height="200">
+        <div class="card-header" style="height:100px;">
+            <p>{{product.title}}</p>
+        </div>
+        <div class="card-body">
+            <dl>
+                <dt>Price</dt>
+                <dd>{{product.price}}</dd>
+                <dt>Rating</dt>
+                <dd>
+                    <span class="bi bi-star-fill text-success"></span> {{product.rating.rate}} 
+                    <span style="color:gray">[{{product.rating.count}}]</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <button (click)="PreviousClick()" class="btn btn-danger me-2">
+                <span class="bi bi-chevron-left"></span>
+            </button>
+            <button (click)="NextClick()" class="btn btn-danger me-2">
+                <span class="bi bi-chevron-right"></span>
+            </button>
+            <button (click)="ToggleDetails()" class="btn btn-success">
+                <span class="bi bi-eye-fill"></span> {{buttonText}} Details
+            </button>
+        </div>
+    </div>
+    <div *ngIf="isVisible" class="description">
+        <h4>Description</h4>
+        <p>{{product.description}}</p>
+    </div>
+</div>

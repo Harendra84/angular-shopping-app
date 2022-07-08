@@ -1,0 +1,38 @@
+<div class="container-fluid">
+   <h3>Product Details</h3>
+   <div class="row">
+      <div class="col-3">
+         <div class="btn-group-vertical">
+            <button name="basic" (click)="ChangeView($event)" class="btn btn-danger w-100">Basic Details</button>
+            <button name="preview" (click)="ChangeView($event)" class="btn btn-danger w-100">Preview</button>
+            <button name="description" (click)="ChangeView($event)" class="btn btn-danger w-100">Description</button>
+            <button name="rating" (click)="ChangeView($event)" class="btn btn-danger w-100">Rating</button>
+         </div>
+      </div>
+      <div class="col-9">
+          <div *ngIf="true; then thenBlock"></div>
+          <ng-template #basic>
+              <h3>Basic Details</h3>
+              <dl>
+                  <dt>Title</dt>
+                  <dd>{{product.title}}</dd>
+                  <dt>Price</dt>
+                  <dd>{{product.price}}</dd>
+              </dl>
+          </ng-template>
+          <ng-template #preview>
+              <h3>Preview</h3>
+              <img [src]="product.image" width="200" height="250">
+          </ng-template>
+          <ng-template #description>
+              <h3>Description</h3>
+              <p>{{product.description}}</p>
+          </ng-template>
+          <ng-template #rating>
+              <h3>Review & Rating</h3>
+              <span class="bi bi-star-fill text-success"></span> 
+               {{product.rating.rate}} [{{product.rating.count}}]
+          </ng-template>
+      </div>
+   </div>
+</div>

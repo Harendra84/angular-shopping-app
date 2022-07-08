@@ -1,0 +1,13 @@
+#background {
+    background-image: url("/assets/netflixback.jpg");
+    background-size: contain;
+    width: 120%;
+}
+#blockbackground {
+    background-color: rgba(0,0,0,0.6);
+    margin-left: -20px;
+    width: 110%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

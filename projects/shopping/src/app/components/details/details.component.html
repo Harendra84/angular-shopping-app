@@ -1,0 +1,13 @@
+<h2>Product Details</h2>
+<div class="card p-2" style="width: 200px;">
+  <img height="150" [src]="Product.image" class="card-img-top">
+  <div class="card-header">
+    <p>{{Product.title}}</p>
+  </div>
+  <div class="card-body">
+    <p>{{Product.price|currency}}</p>
+    <p> <span class="bi bi-star-fill text-success"></span> {{Product.rating.rate}}</p>
+  </div>
+</div>
+<br>
+<a routerLink="/products/{{Product.category}}">Back to Products</a>

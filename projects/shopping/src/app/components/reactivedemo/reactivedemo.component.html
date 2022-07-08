@@ -1,0 +1,16 @@
+<div class="container-fluid">
+   <form [formGroup]="frmRegister">
+    <h2>Register User</h2>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" formControlName="UserName"></dd>
+        <dd *ngIf="UserName.invalid" class="text-danger">
+            <span *ngIf="UserName.errors?.['required']">Name Required</span>
+            <span *ngIf="UserName.errors?.['minlength']">Name too short min 4 chars.</span>
+        </dd>
+        <dt>Mobile</dt>
+        <dd><input type="text" formControlName="Mobile"></dd>
+    </dl>
+    <button class="btn btn-primary">Register</button>
+   </form>
+</div>

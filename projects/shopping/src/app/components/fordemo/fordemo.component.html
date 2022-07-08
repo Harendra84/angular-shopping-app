@@ -1,0 +1,29 @@
+<div class="container-fluid">
+   <h2>Products Table</h2>
+   <table class="table table-hover">
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Price</th>
+               <th>Index</th>
+               <th>First</th>
+               <th>Last</th>
+               <th>Odd</th>
+               <th>Even</th>
+               <th>Action</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let item of Products; let i=index; let f=first; let l=last; let o=odd; let e=even">
+             <td>{{item.Name}}</td>
+             <td>{{item.Price}}</td>
+             <td>{{i}}</td>
+             <td>{{f}}</td>
+             <td>{{l}}</td>
+             <td>{{o}}</td>
+             <td>{{e}}</td>
+             <td><button (click)="DeleteClick(i)">Delete</button></td>
+           </tr>
+       </tbody>
+   </table>
+</div>

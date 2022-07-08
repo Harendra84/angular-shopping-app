@@ -1,0 +1,17 @@
+<div class="container-fluid">
+   <div class="d-flex justify-content-center align-items-center" style="height:500px;">
+        <form [ngClass]="{'dark-mode':theme.value}" class="border border-2 border-dark rounded rounded-2 p-2">
+            <div class="form-switch">
+                <input type="checkbox" name="theme" ngModel #theme="ngModel" class="form-check-input"> Dark Mode
+            </div>
+            <h2>User Login</h2>
+            <dl>
+                <dt>User Id</dt>
+                <dd><input type="text"></dd>
+                <dt>Password</dt>
+                <dd><input type="password"></dd>
+            </dl>
+            <button [ngClass]="{'btn-dark':theme.value}" class="btn btn-primary w-100">Login</button>
+        </form>
+   </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <header class="bg-danger text-white text-center p-2">
+     <h2><span class="bi bi-cart"></span> Fakestore Shopping</h2>
+  </header>
+  <section class="row mt-2">
+     <nav class="col-2">
+        <div>
+            <label class="form-label">Select a Category</label>
+            <div>
+                <select (change)="CategoryChanged($event)" class="form-select">
+                    <option *ngFor="let item of Categories" [value]="item">
+                        {{item | titlecase}}
+                    </option>
+                </select>
+            </div>
+        </div>
+     </nav>
+     <main class="col-7">
+        <div class="d-flex flex-wrap overflow-auto" style="height: 500px;">
+            <div style="width: 200px;" [class.odd-style]="o" [class.even-style]="e" class="card m-2 p-2" *ngFor="let item of Products; let o=odd; let e=even">
+                <img [src]="item.image" height="150" class="card-img-top">
+                <div class="card-header" style="height:180px;">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        <dt>Price</dt>
+                        <dd>{{item.price}}</dd>
+                        <dt>Rating</dt>
+                        <dd><span class="bi bi-star-fill text-success"></span> {{item.rating.rate}} [{{item.rating.count}}] </dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <button (click)="AddToCartClick(item.id)" class="btn btn-danger w-100">
+                        <span class="bi bi-cart4"></span> 
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+     </main>
+     <article class="col-3">
+        <div>
+            <button (click)="ShowCartClick()" class="btn btn-danger w-100">
+                <span class="bi bi-cart2"></span> 
+                [<span>{{CartCount}}</span>] Your Cart Items
+            </button>
+        </div>
+        <div class="mt-2">
+            <table *ngIf="ShowCart" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Preview</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of CartItems; let i = index">
+                        <td>{{item.title}}</td>
+                        <td>
+                            <img [src]="item.image" width="50" height="50">
+                        </td>
+                        <td>
+                            {{item.price}}
+                        </td>
+                        <td>
+                            <button (click)="DeleteCartItem(i)" class="btn btn-danger">
+                                <span class="bi bi-trash-fill"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </article>
+  </section>
+</div>

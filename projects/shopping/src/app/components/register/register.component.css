@@ -1,0 +1,15 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+form {
+    border:2px solid gray;
+    padding: 20px;
+    border-radius: 20px;
+}
+dt{
+    font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.description {
+    position: fixed;
+    right: 250px;
+    top: 100px;
+    border:1px solid black;
+    padding: 20px;
+    width: 250px;
+    text-align: justify;
+}

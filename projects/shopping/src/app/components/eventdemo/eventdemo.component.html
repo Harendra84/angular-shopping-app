@@ -1,0 +1,24 @@
+<div class="container">
+   <h2>Register User</h2>
+   <dl class="w-50">
+       <dt>User Id</dt>
+       <dd>
+           <input type="text" (keyup)="VerifyUser($event)" class="form-control">
+       </dd>
+       <dd class="text-success" [ngClass]="{'text-danger':isError}">
+           {{StatusMessage}}
+       </dd>
+       <dt>User Name</dt>
+       <dd><input type="text" (keypress)="VerifyCaps($event)"  class="form-control"></dd>
+       <dd class="text-warning" *ngIf="showCapsError">
+           <span class="bi bi-exclamation-triangle-fill"></span> Caps ON
+       </dd>
+       <dt>Password</dt>
+       <dd>
+           <input type="password" (keyup)="VerifyPassword($event)" class="form-control">
+       </dd>
+       <dd>{{PasswordMessage}}</dd>
+   </dl>
+    <img (touchstart)="SpeakerTouched()" src="assets/speaker.jpg" width="100" height="100">
+    <p>{{Message}}</p>
+</div>

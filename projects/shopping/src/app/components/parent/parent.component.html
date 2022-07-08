@@ -1,0 +1,8 @@
+<div class="container-fluid bg-dark text-white p-3" style="height:500px">
+   <h2>Parent Component</h2>
+   <dl>
+       <dt>User Name</dt>
+       <dd><input type="text" [(ngModel)]="UserName"></dd>
+   </dl>
+   <app-child [UserNameFromParent]="UserName"></app-child>
+</div>
